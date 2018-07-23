@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin id="cordova-plugin-geolocation-amap" version="0.0.1">
+
+  <name>AMapGeolocation</name>
+
+  <preference name="API_KEY" />
+
+  <platform name="android">
+
+    <js-module src="www/Geolocation.js">
+      <clobbers target="window.navigator.geolocation" />
+    </js-module>
+
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="AMapGeolocation">
+        <param name="android-package" value="com.gxlu.plugins.geolocation.amap.GeolocationPlugin" />
+      </feature>
+    </config-file>
+
+    <source-file src="src/android/Geolocation.java" target-dir="src/com/gxlu/plugins/geolocation/amap" />
+    <source-file src="src/android/GeolocationPlugin.java" target-dir="src/com/gxlu/plugins/geolocation/amap" />
+    <source-file src="src/android/MessageBuilder.java" target-dir="src/com/gxlu/plugins/geolocation/amap" />
+    <source-file src="src/android/libs/AMap_Location_V3.7.0_20171218.jar" target-dir="libs" />
+
+    <config-file target="AndroidManifest.xml" parent="/*">
+      <!--用于进行网络定位-->
+      <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+      <!--用于访问GPS定位-->
+      <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+      <!--用于获取运营商信息，用于支持提供运营商信息相关的接口-->
+      <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+      <!--用于访问wifi网络信息，wifi信息会用于进行网络定位-->
+      <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+      <!--用于获取wifi的获取权限，wifi信息会用来进行网络定位-->
+      <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+      <uses-permission android:name="android.permission.CHANGE_CONFIGURATION"/>
+      <!--用于访问网络，网络定位需要上网-->
+      <uses-permission android:name="android.permission.INTERNET"/>
+      <!--用于读取手机当前的状态-->
+      <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+      <!--用于写入缓存数据到扩展存储卡-->
+      <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+      <!--用于申请调用A-GPS模块-->
+      <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"/>
+      <!--用于申请获取蓝牙信息进行室内定位-->
+      <uses-permission android:name="android.permission.BLUETOOTH"/>
+      <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+      <!-- 允许应用读取低级别的系统日志文件 -->
+      <uses-permission android:name="android.permission.READ_LOGS"/>
+      <!-- 更改设置 -->
+      <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    </config-file>
+
+    <config-file target="AndroidManifest.xml" parent="/manifest/application">
+      <!-- 定位需要的服务 -->
+      <service android:name="com.amap.api.location.APSService"></service>
+      <meta-data android:name="com.amap.api.v2.apikey" android:value="$API_KEY"/>
+    </config-file>
+
+     <dependency id="cordova-plugin-compat" version="^1.0.0" />
+  </platform>
+</plugin>
