@@ -1,5 +1,4 @@
 # AMap Geolocation for Cordova
-======================
 
 高德定位SDK版本：3.7.0
 
@@ -47,7 +46,7 @@ var options = {
 ```
 succes 原型：
 ```
-function success(position, extra) {
+function success(position) {
 }
 ```
 position 基本定义，扩展部分见AMapLocation属性：
