@@ -83,7 +83,7 @@ public class Geolocation {
 		if ("SignIn".equals(purpose)) {
 			locationOption.setLocationPurpose(AMapLocationClientOption.AMapLocationPurpose.SignIn);
 		} else if ("Sport".equals(purpose)) {
-			locationOption.setLocationPurpose(AMapLocationClientOption.AMapLocationPurpose.运动场景Sport);
+			locationOption.setLocationPurpose(AMapLocationClientOption.AMapLocationPurpose.Sport);
 		} else {
 			locationOption.setLocationPurpose(AMapLocationClientOption.AMapLocationPurpose.Transport);
 		}
