@@ -1,0 +1,15 @@
+{
+  "name": "cordova-plugin-geolocation-amap",
+  "version": "1.0.0",
+  "description": "amap location",
+  "repository": "git@github.com:yuanshoujing/cordova-plugin-geolocation-amap.git",
+  "author": "袁首京 <yuanshoujing@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "cordova": {
+    "id": "cordova-plugin-geolocation-amap",
+    "platforms": [
+      "android"
+    ]
+  }
+}
