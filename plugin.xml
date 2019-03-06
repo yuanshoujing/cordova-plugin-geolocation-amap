@@ -56,7 +56,5 @@
       <service android:name="com.amap.api.location.APSService"></service>
       <meta-data android:name="com.amap.api.v2.apikey" android:value="$API_KEY"/>
     </config-file>
-
-     <dependency id="cordova-plugin-compat" version="^1.0.0" />
   </platform>
 </plugin>

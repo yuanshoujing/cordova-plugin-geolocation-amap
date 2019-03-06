@@ -2,8 +2,6 @@
 
 高德定位SDK版本：3.7.0
 
-Cordova 版本：6.1.1
-
 Cordova 使用高德Android定位SDK进行定位，兼容 W3C 的 geolocation 标准，解决中国大陆手机无法定位的问题。
 
 ## 安装方法 Windows下：
@@ -11,7 +9,7 @@ Cordova 使用高德Android定位SDK进行定位，兼容 W3C 的 geolocation �
 在控制台里，进入 cordova 项目目录，执行以下命令：
 
 ```bash
-cordova plugin add https://github.com/wulinjiushi/cordova-plugin-geolocation-amap.git --variable API_KEY=高德分配的AK --save
+cordova plugin add https://github.com/yuanshoujing/cordova-plugin-geolocation-amap.git --variable API_KEY=高德分配的AK --save
 ```
 
 
@@ -20,7 +18,7 @@ cordova plugin add https://github.com/wulinjiushi/cordova-plugin-geolocation-ama
 ...
   <!-- android 使用本插件 -->
   <platform name="android">
-    <plugin name="cordova-plugin-baidu-geolocation" spec="https://github.com/wulinjiushi/cordova-plugin-geolocation-amap.git">
+    <plugin name="cordova-plugin-baidu-geolocation" spec="https://github.com/yuanshoujing/cordova-plugin-geolocation-amap.git">
       <variable name="API_KEY" value="高德分配的AK" />
     </plugin>
   </platform>
